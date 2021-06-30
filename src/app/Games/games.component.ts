@@ -17,7 +17,8 @@ export class GamesComponent {
   AddGames(){
     this.games.push(new GameModel("Blackjack", "Blackjack"))
     this.games.push(new GameModel("Dice", "Dice"))
-    this.games.push(new GameModel("Roller", "LogicMachine"))
+    this.games.push(new GameModel("Fruit Rush", "LogicMachine"))
+    this.games.push(new GameModel("TBA", "ToBeAnnounced"))
   }
 
   PrepareGame(gamemode: string){

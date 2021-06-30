@@ -1,3 +1,9 @@
-<div *ngFor="let game of games">
-  <button (click)="PrepareGame(game.getGame())" [textContent]="game.getName()"></button>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3 fill" *ngFor="let game of games">
+      <a (click)="PrepareGame(game.getGame())"><img [src]="game.getPicture()" alt="{{game.getName()}}"></a>
+    </div>
+  </div>
 </div>
+
+

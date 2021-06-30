@@ -2,7 +2,7 @@
 
 body {
   margin: 0;
-  background-color: aquamarine;
+  background-color: #ffb08b;
 }
 
 img {
@@ -12,13 +12,15 @@ img {
 
 .row {
   margin: 0 0 auto;
-  background-color: mediumaquamarine;
+  background-color: #a47b54;
   width: 100%;
 }
 
 .img-slot{
   width: 100px;
   height: 100px;
+  display: block;
+  margin: 0 auto;
 }
 
 .form-input{
@@ -34,4 +36,23 @@ img {
   bottom: 0;
   width: 100%;
   background-color: #F8F9FA;
+}
+
+.fill img {
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.fill img:hover {
+  background-color:#000;
+  opacity:0.9;
+}
+
+.slot {
+  border-left: 3px;
+  border-right: 3px;
+  border-bottom: 1px;
+  border-top: 1px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.5);
 }

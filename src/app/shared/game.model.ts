@@ -21,4 +21,17 @@ export class GameModel {
   getGame(){
     return this.game;
   }
+
+  public getPicture(){
+    switch(this.getName()){
+      case "Dice":
+        return "/assets/images/dice.jpg"
+      case "Blackjack":
+        return "/assets/images/blackjack.jpg"
+      case "Fruit Rush":
+        return "/assets/images/logicmachine.jpeg"
+      case "TBA":
+        return "/assets/images/tba.jpg"
+    }
+  }
 }
