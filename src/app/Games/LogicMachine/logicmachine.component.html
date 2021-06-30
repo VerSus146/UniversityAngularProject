@@ -1,0 +1,40 @@
+<div id="game_content">
+  <div id="game_header">
+    <h1 style="text-align: center">Logic machine!</h1>
+  </div>
+  <div id="game_body">
+    <div class="container" id="logic_machine">
+      <div class="row">
+        <div class="col-sm-1" ></div>
+        <div class="col-sm-2" #tile_1>1</div>
+        <div class="col-sm-2" #tile_4>4</div>
+        <div class="col-sm-2" #tile_7>7</div>
+        <div class="col-sm-2" #tile_10>10</div>
+        <div class="col-sm-2" #tile_13>13</div>
+        <div class="col-sm-1"></div>
+      </div>
+      <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-2" #tile_2>2</div>
+        <div class="col-sm-2" #tile_5>5</div>
+        <div class="col-sm-2" #tile_8>8</div>
+        <div class="col-sm-2" #tile_11>11</div>
+        <div class="col-sm-2" #tile_14>14</div>
+        <div class="col-sm-1"></div>
+      </div>
+      <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-2" #tile_3>3</div>
+        <div class="col-sm-2" #tile_6>6</div>
+        <div class="col-sm-2" #tile_9>9</div>
+        <div class="col-sm-2" #tile_12>12</div>
+        <div class="col-sm-2" #tile_15>15</div>
+        <div class="col-sm-1"></div>
+      </div>
+      <button (click)="BetMoney()">Bet</button>
+    </div>
+  </div>
+  <div id="game_footer">
+    <winnings [game]="game" [multiplayer_game]="last_winning"></winnings>
+  </div>
+</div>

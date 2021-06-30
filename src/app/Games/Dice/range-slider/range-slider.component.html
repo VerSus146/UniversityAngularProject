@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <p>Min value: <label>
+        <input type="number" [(ngModel)]="minValue">
+      </label></p>
+    </div>
+    <div class="col-md-6">
+      <p>Max value: <label>
+        <input type="number" [(ngModel)]="maxValue">
+      </label></p>
+    </div>
+    <ngx-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ngx-slider>
+    <button (click)="sendData()">Bet</button>
+  </div>
+</div>

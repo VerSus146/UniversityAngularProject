@@ -1,0 +1,17 @@
+<form [formGroup]="checkoutForm" (ngSubmit)="Submit()">
+
+  <div>
+    <label for="name"></label><input #name required id="name" class="form-input" type="text" formControlName="name" (click)="name.value = ' '">
+  </div>
+
+  <div>
+    <label for="email"></label><input #email required id="email" class="form-input" type="text" formControlName="email" (click)="email.value = ' '">
+  </div>
+
+  <div>
+    <label for="text"></label><input #text required id="text" class="form-input" type="text" style="height: 150px;" formControlName="text" (click)="text.value = ' '">
+  </div>
+
+  <button class="button form-input"  type="submit">Submit</button>
+
+</form>

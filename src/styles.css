@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+  margin: 0;
+  background-color: aquamarine;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.row {
+  margin: 0 0 auto;
+  background-color: mediumaquamarine;
+  width: 100%;
+}
+
+.img-slot{
+  width: 100px;
+  height: 100px;
+}
+
+.form-input{
+  width: 250px;
+  display: block;
+  text-align: center;
+  margin: 10px auto;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #F8F9FA;
+}

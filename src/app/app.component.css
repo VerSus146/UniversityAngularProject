@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  background-color: aquamarine;
+}
+
+.row {
+  border: #4d9f83 5px solid;
+  background-color: mediumaquamarine;
+  width: 100%;
+}
+
+.img-slot{
+  width: 100px;
+  height: 100px;
+}

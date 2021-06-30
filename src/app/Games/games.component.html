@@ -1,0 +1,3 @@
+<div *ngFor="let game of games">
+  <button (click)="PrepareGame(game.getGame())" [textContent]="game.getName()"></button>
+</div>

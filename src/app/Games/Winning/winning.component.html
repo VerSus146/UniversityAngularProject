@@ -1,0 +1,6 @@
+<h1 style="text-align: center">
+  <span *ngIf="multiplayer > 1">You've won {{multiplayer}}x!</span>
+  <span *ngIf="multiplayer == 1">Return of money: {{multiplayer}}x!</span>
+  <span *ngIf="multiplayer == 0 && game != 'Dice'">Loss of money!</span>
+  <span *ngIf="multiplayer < 1 && multiplayer > 0 && game != 'Dice'">Partial return of money: {{multiplayer}}x!</span>
+</h1>

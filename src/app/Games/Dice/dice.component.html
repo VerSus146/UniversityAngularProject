@@ -1,0 +1,11 @@
+<div id="game_content">
+  <div id="game_header">
+    <h1>Dice!</h1>
+  </div>
+  <div id="game_body">
+    <range-slider (messageEvent)="receiveData($event)"></range-slider>
+  </div>
+  <div id="game_footer">
+    <winnings [game]="game" [multiplayer_game]="last_winning"></winnings>
+  </div>
+</div>
