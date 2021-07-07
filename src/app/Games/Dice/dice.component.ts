@@ -20,7 +20,7 @@ export class DiceComponent {
     if(this.UpdateStats()){
       let random = Math.floor(Math.random() * 6) + 1;
       if(random >= this.slider_value[0] && random <= this.slider_value[1]){
-        this.last_winning = Math.ceil((4 - Math.abs(this.slider_value[0] - this.slider_value[1]))*1.5)
+        this.last_winning = Math.ceil((4 - Math.abs(this.slider_value[0] - this.slider_value[1])))
         console.log("Właśnie wygrałeś x" + this.last_winning)
       } else {
         this.last_winning = 0
@@ -41,7 +41,7 @@ export class DiceComponent {
   UpdateStats(){
     let user: any = JSON.parse(localStorage.getItem("LoggedUser"))
     user[0].stats.DicePlays++;
-    if(user[0].stats.MoneyWithdrawn.amount < 2){
+    if(user[0].stats.MoneyDeposited.amount < 2){
       alert("Insufficient balance!")
       return false
     } else {
