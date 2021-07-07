@@ -1,0 +1,11 @@
+<div class="container">
+  <div [ngSwitch]="GetLoggedUser()">
+    <div *ngSwitchCase="null">
+      <login></login><br/>
+      <button (click)="SignUp()" class="form-input asLink">Signup</button>
+    </div>
+    <div *ngSwitchDefault>
+      <user></user>
+    </div>
+  </div>
+</div>

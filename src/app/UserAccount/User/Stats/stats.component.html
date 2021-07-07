@@ -1,0 +1,22 @@
+<div class="container stats_container">
+  <div class="stats_horizontal">
+    <h4 style="text-align: center"> Stats </h4>
+    <hr>
+    Games Played: {{user[0].stats.DicePlays + user[0].stats.LogicMachinePlays}}<br/>
+    Dices thrown: {{user[0].stats.DicePlays}}<br/>
+    Logic Machine spins: {{user[0].stats.LogicMachinePlays}}<br/><br/>
+
+    Money Deposited: {{user[0].stats.MoneyDeposited.amount}} zł<br/>
+    Money Withdrawn: {{user[0].stats.MoneyWithdrawn.amount}} zł
+  </div>
+  <div class="stats_horizontal" style="width: 70%">
+    <div class="stats_vertical">
+      <button class="form-input" style="margin-top: 7%" (click)="DepositMoney()">Deposit Money</button>
+      <button class="form-input" (click)="WithdrawMoney()">Withdraw Money</button>
+      <h5 style="text-align: center">Balance: {{user[0].stats.Balance.amount}} zł</h5>
+    </div>
+    <div class="stats_vertical">
+      <button (click)="LogOut()" class="form-input" style="margin-top: 10% ">Log Out</button>
+    </div>
+  </div>
+</div>

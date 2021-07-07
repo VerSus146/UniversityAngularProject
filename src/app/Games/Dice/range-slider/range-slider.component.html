@@ -12,7 +12,8 @@
     </div>
     <ngx-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ngx-slider>
     <div style="margin: 15px">
-      <button (click)="sendData()" style="width: 50px">Bet</button>
+      <button (click)="sendData()" style="width: 50px; float: left;">Bet</button>
+      <h5><span [innerText]="GetBalance()" style="float: right;"></span></h5>
     </div>
 
   </div>

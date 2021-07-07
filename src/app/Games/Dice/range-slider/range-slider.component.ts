@@ -23,4 +23,9 @@ export class RangeSliderComponent {
   sendData() {
     this.messageEvent.emit([this.minValue, this.maxValue])
   }
+
+  GetBalance() {
+    let user: any = JSON.parse(localStorage.getItem("LoggedUser"))
+    return "Balance: " + user[0].stats.Balance.amount + " zł"
+  }
 }

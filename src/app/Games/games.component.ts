@@ -22,6 +22,10 @@ export class GamesComponent {
   }
 
   PrepareGame(gamemode: string){
+    if(localStorage.getItem("LoggedUser") == null){
+      this.gamesService.NotLoggedIn()
+      return
+    }
     this.gamesService.GameSelection(gamemode);
   }
 }

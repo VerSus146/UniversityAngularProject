@@ -16,6 +16,14 @@ import { ContactComponent } from "./Contact/contact.component";
 import { ContactFormComponent } from "./Contact/ContactForm/contactForm.component";
 import { LiveChatComponent } from "./Contact/LiveChat/liveChat.component";
 import {WinningComponent} from "./Games/Winning/winning.component";
+import {LoginComponent} from "./UserAccount/Login/login.component";
+import {SignupComponent} from "./UserAccount/Signup/signup.component";
+import {StatsComponent} from "./UserAccount/User/Stats/stats.component";
+import {UserAccountComponent} from "./UserAccount/userAccount.component";
+import {UserComponent} from "./UserAccount/User/user.component";
+import { RecaptchaModule } from 'ng-recaptcha';
+import {DepositComponent} from "./UserAccount/Deposit/deposit.component";
+import {WithdrawComponent} from "./UserAccount/Withdraw/withdraw.component";
 
 @NgModule({
   declarations: [
@@ -29,7 +37,14 @@ import {WinningComponent} from "./Games/Winning/winning.component";
     HeaderComponent,
     ContactFormComponent,
     LiveChatComponent,
-    WinningComponent
+    WinningComponent,
+    LoginComponent,
+    SignupComponent,
+    StatsComponent,
+    UserAccountComponent,
+    UserComponent,
+    DepositComponent,
+    WithdrawComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +53,8 @@ import {WinningComponent} from "./Games/Winning/winning.component";
     FormsModule,
     NgxSliderModule,
     NgbModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RecaptchaModule
   ],
   providers: [],
   bootstrap: [AppComponent]

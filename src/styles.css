@@ -56,3 +56,31 @@ img {
   border-style: solid;
   border-color: rgba(0, 0, 0, 0.5);
 }
+
+.asLink{
+  background: none!important;
+  border: none;
+  padding: 0!important;
+  /*optional*/
+  font-family: arial, sans-serif;
+  /*input has OS specific font-family*/
+  color: #069;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.stats_container{
+  overflow: hidden;
+}
+
+.stats_horizontal{
+  height: 50vh;
+  width: 30%;
+  border: black 1px solid;
+  float: left;
+}
+
+.stats_vertical{
+  height: 25vh;
+  border: black 1px solid
+}

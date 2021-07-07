@@ -1,0 +1,11 @@
+<form [formGroup]="checkoutForm" (ngSubmit)="deposit(amount.value)">
+
+  <div>
+    <label for="amount" class="form-input">Amount</label><input #amount required id="amount" class="form-input" type="text" formControlName="amount" (click)="amount.value = null">
+  </div>
+
+  <button type="submit" class="form-input">Deposit</button>
+
+</form>
+
+<button (click)="GoBack()" class="form-input">Go Back</button>

@@ -31,10 +31,9 @@
         <div class="col-sm-2 slot" #tile_15>15</div>
         <div class="col-sm-1"></div>
       </div>
+      <h5><span [innerText]="GetBalance()" style="float: right;"></span></h5>
       <button (click)="BetMoney()" style="width: 50px">Bet</button>
+      <winnings [game]="game" [multiplayer_game]="last_winning"></winnings>
     </div>
-  </div>
-  <div id="game_footer">
-    <winnings [game]="game" [multiplayer_game]="last_winning"></winnings>
   </div>
 </div>

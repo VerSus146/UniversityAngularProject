@@ -1,5 +1,6 @@
 import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
 import { TileModel } from "../../shared/tile.model";
+import {UserModel} from "../../shared/user.model";
 
 
 @Component({
@@ -201,37 +202,67 @@ export class LogicmachineComponent implements AfterViewInit{
   }
 
   CheckWinnings(tiles_value){
-    let total_multiplayer = 0
-    this.bets.forEach(function (bet){
-      let index = -1
-      let tested_value = 0
-      let multiplayer = 0
-      for (let column = 0; column < 5; column++) {
-        let match_found = false
-        for(let row_value = 0; row_value < 3; row_value++){
-          index++
-          if(bet[column][row_value] == 1){
-            if(tested_value == 0){
-              tested_value = tiles_value[index].getValue()
-              multiplayer++
-              match_found = true
-            } else {
-              if(tested_value == tiles_value[index].getValue()){
-                multiplayer = multiplayer + (tested_value * multiplayer)
+    if(this.UpdateStats()){
+      let total_multiplayer = 0
+      this.bets.forEach(function (bet){
+        let index = -1
+        let tested_value = 0
+        let multiplayer = 0
+        for (let column = 0; column < 5; column++) {
+          let match_found = false
+          for(let row_value = 0; row_value < 3; row_value++){
+            index++
+            if(bet[column][row_value] == 1){
+              if(tested_value == 0){
+                tested_value = tiles_value[index].getValue()
+                multiplayer++
                 match_found = true
+              } else {
+                if(tested_value == tiles_value[index].getValue()){
+                  multiplayer = multiplayer + (tested_value * multiplayer)
+                  match_found = true
+                }
               }
             }
           }
-        }
-        if(match_found == false){
-          if(multiplayer > 1){
-            total_multiplayer += (multiplayer/8)
+          if(match_found == false){
+            if(multiplayer > 1){
+              total_multiplayer += (multiplayer/8)
+            }
+            break
           }
-          break
         }
-      }
-    })
-    this.last_winning = total_multiplayer
-    console.log(total_multiplayer)
+      })
+      this.last_winning = total_multiplayer
+      this.AddWinnings(total_multiplayer)
+    }
+  }
+
+  AddWinnings(total_multiplayer){
+    if(total_multiplayer > 0){
+      let user: any = JSON.parse(localStorage.getItem("LoggedUser"))
+      user[0].stats.MoneyDeposited.amount += 2*total_multiplayer;
+      user[0].stats.Balance.amount = user[0].stats.MoneyDeposited.amount - user[0].stats.MoneyWithdrawn.amount;
+      localStorage.setItem("LoggedUser", JSON.stringify(user))
+    }
+  }
+
+  UpdateStats(){
+    let user: any = JSON.parse(localStorage.getItem("LoggedUser"))
+    user[0].stats.LogicMachinePlays++;
+    if(user[0].stats.Balance.amount < 2){
+      alert("Insufficient balance!")
+      return false
+    } else {
+      user[0].stats.MoneyWithdrawn.amount += 2;
+      user[0].stats.Balance.amount = user[0].stats.MoneyDeposited.amount - user[0].stats.MoneyWithdrawn.amount;
+      localStorage.setItem("LoggedUser", JSON.stringify(user))
+      return true
+    }
+  }
+
+  GetBalance() {
+    let user: any = JSON.parse(localStorage.getItem("LoggedUser"))
+    return "Balance: " + user[0].stats.Balance.amount + " zł"
   }
 }

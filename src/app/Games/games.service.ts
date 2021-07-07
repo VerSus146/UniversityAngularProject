@@ -38,4 +38,7 @@ export class gamesService{
     this.router.navigate(['Dice'])
   }
 
+  NotLoggedIn() {
+    this.router.navigate(['UserAccount'])
+  }
 }

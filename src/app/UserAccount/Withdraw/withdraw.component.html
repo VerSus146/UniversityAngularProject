@@ -1,0 +1,13 @@
+<form [formGroup]="checkoutForm" (ngSubmit)="withdraw(amount.value)">
+
+  <div>
+    <label for="amount" class="form-input">Amount</label><input #amount required id="amount" class="form-input" type="text" formControlName="amount" (click)="amount.value = null">
+  </div>
+
+  <button type="submit" class="form-input">Withdraw</button>
+
+</form>
+
+<button (click)="GoBack()" class="form-input">Go Back</button>
+
+

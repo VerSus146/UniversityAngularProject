@@ -1,0 +1,16 @@
+<h1 style="text-align: center"></h1>
+
+<form [formGroup]="checkoutForm" (ngSubmit)="login(username.value, password.value)">
+
+  <div>
+    <label for="username" class="form-input">Username</label><input #username required id="username" class="form-input" type="text" formControlName="username" (click)="username.value = null">
+  </div>
+
+  <div>
+    <label for="password" class="form-input">Password</label><input #password required id="password" class="form-input" type="password" formControlName="password" (click)="password.value = null">
+  </div>
+
+  <button type="submit" class="form-input">Login</button>
+
+</form>
+
